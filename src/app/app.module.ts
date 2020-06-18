@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MediaItemsComponent } from './media-items/media-items.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MediaItemsComponent
   ],
   imports: [
     BrowserModule,
