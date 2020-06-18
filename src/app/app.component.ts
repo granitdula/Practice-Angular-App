@@ -1,10 +1,24 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Practice-Angular-App';
+    title = 'Practice-Angular-App';
+
+    firstMediaItem = {
+        id: 1,
+        name: "Firebug",
+        medium: "Series",
+        category: "Science Fiction",
+        year: 2010,
+        watchedOn: 1294166565384,
+        isFavourite: false
+    };
+
+    onMediaItemDelete(mediaItem) {
+
+    }
 }
