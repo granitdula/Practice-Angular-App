@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MediaItemsComponent } from './media-items/media-items.component';
 import { MediaItemListComponent } from './media-item-list/media-item-list.component';
+import { CategoryListPipe } from './category-list.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MediaItemsComponent,
     MediaItemListComponent,
-    FavouriteDirective
+    FavouriteDirective,
+    CategoryListPipe
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,7 @@
 <section>
+    <header>
+        <div>{{ mediaItems | categoryList }}</div>
+    </header>
     <app-media-items *ngFor="let mediaItem of mediaItems"
     [mediaItem]="mediaItem"
     (delete)="onMediaItemDelete($event)"
