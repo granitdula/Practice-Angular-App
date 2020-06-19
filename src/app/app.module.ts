@@ -1,3 +1,4 @@
+import { FavouriteDirective } from './favourite.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +11,8 @@ import { MediaItemListComponent } from './media-item-list/media-item-list.compon
   declarations: [
     AppComponent,
     MediaItemsComponent,
-    MediaItemListComponent
+    MediaItemListComponent,
+    FavouriteDirective
   ],
   imports: [
     BrowserModule,
