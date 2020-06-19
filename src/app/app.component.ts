@@ -7,18 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'Practice-Angular-App';
-
-    firstMediaItem = {
-        id: 1,
-        name: "Firebug",
-        medium: "Series",
-        category: "Science Fiction",
-        year: 2010,
-        watchedOn: 1294166565384,
-        isFavourite: false
-    };
-
-    onMediaItemDelete(mediaItem) {
-
-    }
 }
