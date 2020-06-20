@@ -9,6 +9,7 @@ import { MediaItemsComponent } from './media-items/media-items.component';
 import { MediaItemListComponent } from './media-item-list/media-item-list.component';
 import { CategoryListPipe } from './category-list.pipe';
 import { MediaItemFormComponent } from './media-item-form/media-item-form.component';
+import { lookupListToken, lookupLists } from './providers';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { MediaItemFormComponent } from './media-item-form/media-item-form.compon
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: lookupListToken, useValue: lookupLists }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
