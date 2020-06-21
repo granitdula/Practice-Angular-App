@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: "root"
@@ -49,8 +51,15 @@ export class MediaItemService {
         }
     ];
 
-    get() {
-        return this.mediaItems;
+    constructor(private http: HttpClient) {}
+
+    get(medium) {
+        const getOptions = {
+            params: { medium }
+        };
+
+        return this.http.get<MediaItemResponse>("mediaitems", getOptions)
+        .pipe(map(response => { return response.mediaItems; }));
     }
 
     add(mediaItem) {
@@ -64,4 +73,20 @@ export class MediaItemService {
             this.mediaItems.splice(index, 1);
         }
     }
+}
+
+export interface MediaItem {
+    id: number;
+    name: string;
+    medium: string;
+    category: string;
+    year: number;
+    watchedOn: number;
+    isFavourite: boolean;
+// tslint:disable-next-line: semicolon
+}
+
+interface MediaItemResponse {
+    mediaItems: MediaItem[];
+// tslint:disable-next-line: semicolon
 }
