@@ -1,4 +1,3 @@
-import { NewItemModule } from './media-item-form/new-item.module';
 import { MockXHRBackend } from './mock-xhr-backend';
 import { FavouriteDirective } from './favourite.directive';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,8 +23,7 @@ import { routing } from './app.routing';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    routing,
-    NewItemModule
+    routing
   ],
   providers: [
     { provide: lookupListToken, useValue: lookupLists },
