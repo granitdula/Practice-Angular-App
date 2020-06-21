@@ -1,8 +1,9 @@
+import { MockXHRBackend } from './mock-xhr-backend';
 import { FavouriteDirective } from './favourite.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule, HttpXhrBackend } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MediaItemsComponent } from './media-items/media-items.component';
@@ -23,10 +24,12 @@ import { lookupListToken, lookupLists } from './providers';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    { provide: lookupListToken, useValue: lookupLists }
+    { provide: lookupListToken, useValue: lookupLists },
+    { provide: HttpXhrBackend,  useClass: MockXHRBackend}
   ],
   bootstrap: [AppComponent]
 })
